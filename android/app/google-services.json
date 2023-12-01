@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "158702842561",
+    "project_id": "ourmessenger-60e57",
+    "storage_bucket": "ourmessenger-60e57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158702842561:android:24ddc55471e79fd39f9a40",
+        "android_client_info": {
+          "package_name": "com.our.messenger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjhTiOf4SaGLpj0_Xi7Xjru80tpZ-9GUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
