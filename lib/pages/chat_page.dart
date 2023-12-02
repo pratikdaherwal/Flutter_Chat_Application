@@ -8,10 +8,12 @@ import 'package:ourmessenger/services/chats/chat_services.dart';
 class ChatPage extends StatefulWidget {
   final String recieverUserEmail;
   final String recieverUsedId;
+  final String recieverUserName;
   const ChatPage(
       {super.key,
       required this.recieverUserEmail,
-      required this.recieverUsedId});
+      required this.recieverUsedId,
+      required this.recieverUserName});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -35,15 +37,17 @@ class _ChatPageState extends State<ChatPage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 21, 21, 21),
       appBar: AppBar(
-        backgroundColor:  Colors.grey[900],
-        title: Text(widget.recieverUserEmail,
-        style: const TextStyle(color: Colors.white)),
+        backgroundColor: Colors.grey[900],
+        title: Text(widget.recieverUserName,
+            style: const TextStyle(color: Colors.white)),
       ),
       body: Column(children: [
         Expanded(
           child: _buildMessegeList(),
         ),
-        const SizedBox(height: 25,),
+        const SizedBox(
+          height: 25,
+        ),
         _buildMessegeInput(),
       ]),
     );
@@ -83,13 +87,16 @@ class _ChatPageState extends State<ChatPage> {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: 
-          (data['senderId'] == _firebaseAuth.currentUser!.uid) 
-          ? CrossAxisAlignment.end : CrossAxisAlignment.start,
+          crossAxisAlignment:
+              (data['senderId'] == _firebaseAuth.currentUser!.uid)
+                  ? CrossAxisAlignment.end
+                  : CrossAxisAlignment.start,
           children: [
             Text(data['senderEmail'],
-            style: const TextStyle(color: Colors.white)),
-            const SizedBox(height: 5,),
+                style: const TextStyle(color: Colors.white)),
+            const SizedBox(
+              height: 5,
+            ),
             ChatBubble(messege: data['messege']),
           ],
         ),
@@ -108,10 +115,11 @@ class _ChatPageState extends State<ChatPage> {
               controller: _messegeController,
               hintText: "Write a messege",
               obscureText: false,
-              
             ),
           ),
-          const SizedBox(width: 7,),
+          const SizedBox(
+            width: 7,
+          ),
           IconButton(
             onPressed: sendMessege,
             icon: const Icon(

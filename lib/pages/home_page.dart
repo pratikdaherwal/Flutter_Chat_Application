@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
 
     if (_auth.currentUser!.email != data['email']) {
       return ListTile(
-        title: Text(data['email'],
+        title: Text(data['name'],
         style: const TextStyle(color: Colors.white),
         ),
         onTap: () {
@@ -81,6 +81,7 @@ class _HomePageState extends State<HomePage> {
               builder: (context) => ChatPage(
                 recieverUserEmail: data['email'],
                 recieverUsedId: data['uid'],
+                recieverUserName: data['name'],
               ),
             ),
           );
