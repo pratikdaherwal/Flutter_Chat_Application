@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ourmessenger/firebase_options.dart';
-import 'package:ourmessenger/services/auth/auth_gate.dart';
+import 'package:ourmessenger/pages/splash_screen.dart';
+//import 'package:ourmessenger/services/auth/auth_gate.dart';
 // import 'package:ourmessenger/services/auth/Login_Or_Register.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ourmessenger/services/auth/auth_service.dart';
@@ -14,6 +15,7 @@ Future<void> main() async {
   
   runApp(
     ChangeNotifierProvider(
+      //create: (context) => const SplashScreen(),
     create: (context) => AuthService(),
     child: const MyApp()
   )
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Our Messenger',
       debugShowCheckedModeBanner: false,
-      home: AuthGate(),
+      home: SplashScreen(),
     );
   }
 }
