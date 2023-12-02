@@ -44,15 +44,6 @@ class _SplashScreenState extends State<SplashScreen> {
             right: mq.width * .25,
             width: mq.width * .5,
             child: Image.asset('images/icon.png')),
-
-        //google login button
-        // Positioned(
-        //     bottom: mq.height * .15,
-        //     width: mq.width,
-        //     child: const Text('MADE IN INDIA WITH ❤️',
-        //         textAlign: TextAlign.center,
-        //         style: TextStyle(
-        //             fontSize: 16, color: Colors.black87, letterSpacing: .5))),
       ]),
     );
   }

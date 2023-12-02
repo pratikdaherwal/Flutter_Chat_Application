@@ -15,7 +15,6 @@ Future<void> main() async {
   
   runApp(
     ChangeNotifierProvider(
-      //create: (context) => const SplashScreen(),
     create: (context) => AuthService(),
     child: const MyApp()
   )
