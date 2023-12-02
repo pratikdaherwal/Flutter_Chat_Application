@@ -70,7 +70,7 @@ class _HomePageState extends State<HomePage> {
 
     if (_auth.currentUser!.email != data['email']) {
       return ListTile(
-        title: Text(data['name'].toString(),
+        title: Text(data['name'],
         style: const TextStyle(color: Colors.white),
         ),
         onTap: () {
