@@ -13,6 +13,7 @@ class RegistrationPage extends StatefulWidget {
 }
 
 class _RegistrationPageState extends State<RegistrationPage> {
+  final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passController = TextEditingController();
   final confirmPassController = TextEditingController();
@@ -29,7 +30,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     final authService = Provider.of<AuthService>(context, listen: false);
     try {
       await authService.signUpWithEmailAndPassword(
-          emailController.text, passController.text);
+          emailController.text, passController.text, nameController.text);
     } catch (e) {
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
@@ -67,6 +68,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
               //signin
               //email textfield
+              const SizedBox(height: 10),
+              MyTextField(
+                  controller: nameController,
+                  obscureText: false,
+                  hintText: "Name"),
               const SizedBox(height: 10),
               MyTextField(
                   controller: emailController,
